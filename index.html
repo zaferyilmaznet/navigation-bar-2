@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- =============== Remix Icons =============== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- =============== Google Fonts =============== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- =============== CSS =============== -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Navigation Bar 2</title>
+  </head>
+  <body>
+    <!-- =============== HEADER =============== -->
+    <div class="header">
+      <nav class="nav container">
+        <div class="nav__wrapper">
+          <!-- Nav Logo -->
+          <a href="#" class="nav__logo">
+            <i class="ri-fingerprint-line"></i> Company
+          </a>
+
+          <!-- Nav Menu -->
+          <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">Home</a></li>
+              <li><a href="#" class="nav__link">About</a></li>
+              <li><a href="#" class="nav__link">Products</a></li>
+              <li><a href="#" class="nav__link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Nav Toggle -->
+          <div
+            class="nav__toggle"
+            id="nav-toggle"
+            role="button"
+            aria-label="Menu toggle"
+          >
+            <i class="ri-menu-line nav__icon nav__icon--burger"></i>
+            <i class="ri-close-line nav__icon nav__icon--close"></i>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- =============== JAVASCRIPT =============== -->
+    <script>
+      /* =============== Show Menu =============== */
+      const showMenu = (toggleId, menuId) => {
+        const navToggle = document.getElementById(toggleId);
+        const navMenu = document.getElementById(menuId);
+
+        navToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("nav__menu--open");
+          navToggle.classList.toggle("nav__toggle--active");
+        });
+      };
+
+      showMenu("nav-toggle", "nav-menu");
+    </script>
+  </body>
+</html>
